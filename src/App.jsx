@@ -1,7 +1,21 @@
-function App() {
+import { Post } from './Post';
+import { Header } from './components';
+
+import './styles.css'
+
+export function App() {
   return (
-    <h1>Hello World!</h1>
+    <div>
+      <Header />
+      <Post
+        author="Vinicius Buarque"
+        content="lorem ipsum indolor content acet"
+      />
+
+      <Post
+        author="Vitor Augusto Barros"
+        content="lorem ipsum indolor content acet orem ipsum indolor content acet"
+      />
+    </div>
   );
 }
-
-export default App
