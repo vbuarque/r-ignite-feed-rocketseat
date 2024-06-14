@@ -9,6 +9,7 @@
     --gray-900: #121214;
   
     --green-500: #00875f;
+    --green-400: #00B37E;
   }
 
 * {
@@ -24,7 +25,7 @@ body {
 }
 
 body, input, textarea, button {
-    font-family: 'Robot', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 1rem;
 }
