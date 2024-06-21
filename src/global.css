@@ -9,8 +9,12 @@
     --gray-900: #121214;
   
     --green-500: #00875f;
-    --green-400: #00B37E;
-  }
+    --green-300: #00B37E;
+}
+
+:focus {
+    outline: 2px solid var(--green-500);
+}
 
 * {
     margin: 0;

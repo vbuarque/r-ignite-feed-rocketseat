@@ -48,8 +48,8 @@
 
 .sidebar footer a {
     background: transparent;
-    color: var(--green-400);
-    border: 1px solid var(--green-400);
+    color: var(--green-300);
+    border: 1px solid var(--green-300);
     border-radius: 8px;
     padding: 1rem 1.5rem;
     font-weight: 700;
