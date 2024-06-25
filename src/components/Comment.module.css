@@ -1,0 +1,105 @@
+.commentWrapper {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 1rem;
+}
+
+.commentWrapper + .commentWrapper {
+    margin-top: 1.5rem;
+}
+
+.commentWrapper img {
+    box-sizing: initial;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 8px;
+}
+
+.commentSection {
+    display: grid;
+    gap: 1rem;
+}
+
+.comment {
+    background: var(--gray-700);
+    padding: 1rem 1rem 1.5rem 1rem;
+    border-radius: 8px;
+
+    display: grid;
+    gap: 1rem;
+}
+
+.comment > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.userName {
+    display: flex;
+    flex-direction: row;
+    gap: 0.313rem;
+}
+
+.userName > strong{
+    font-size: 0.875rem;
+    color: var(--gray-100);
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+.userName > span{
+    font-size: 0.875rem;
+    color: var(--gray-400);
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+.commentUser > time{
+    font-size: 0.75rem;
+    color: var(--gray-400);
+    line-height: 1.6;
+}
+
+.comment > header > button {
+    background: transparent;
+    border: none;
+    color: var(--gray-400);
+    cursor: pointer;
+    transition:color 0.2s;
+}
+
+.comment > header > button:hover {
+    color: var(--red-300);
+}
+
+.comment > p {
+    font-size: 0.875rem;
+    color: var(--gray-300);
+    line-height: 1.6;
+}
+
+.commentFooter > button {
+    background: transparent;
+    border: none;
+
+    display: flex;
+    align-items: flex-end;
+    gap: 0.625rem;
+
+    font-size: 0.875rem;
+    color: var(--gray-400);
+    cursor: pointer;
+
+    transition: color 0.2s;
+}
+
+.commentFooter > button:hover {
+    color: var(--gray-100)
+}
+
+.commentFooter > button:active {
+    color: var(--green-300);
+    outline: none;
+}
