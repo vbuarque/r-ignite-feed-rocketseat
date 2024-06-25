@@ -5,7 +5,7 @@
     gap: 1rem;
 }
 
-.commentWrapper + .commentWrapper {
+.commentWrapper+.commentWrapper {
     margin-top: 1.5rem;
 }
 
@@ -30,7 +30,7 @@
     gap: 1rem;
 }
 
-.comment > header {
+.comment>header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -42,45 +42,45 @@
     gap: 0.313rem;
 }
 
-.userName > strong{
+.userName>strong {
     font-size: 0.875rem;
     color: var(--gray-100);
     line-height: 1.6;
     font-weight: bold;
 }
 
-.userName > span{
+.userName>span {
     font-size: 0.875rem;
     color: var(--gray-400);
     line-height: 1.6;
     font-weight: bold;
 }
 
-.commentUser > time{
+.commentUser>time {
     font-size: 0.75rem;
     color: var(--gray-400);
     line-height: 1.6;
 }
 
-.comment > header > button {
+.comment>header>button {
     background: transparent;
     border: none;
     color: var(--gray-400);
     cursor: pointer;
-    transition:color 0.2s;
+    transition: color 0.2s;
 }
 
-.comment > header > button:hover {
+.comment>header>button:hover {
     color: var(--red-300);
 }
 
-.comment > p {
+.comment>p {
     font-size: 0.875rem;
     color: var(--gray-300);
     line-height: 1.6;
 }
 
-.commentFooter > button {
+.commentFooter>button {
     background: transparent;
     border: none;
 
@@ -95,11 +95,17 @@
     transition: color 0.2s;
 }
 
-.commentFooter > button:hover {
+.commentFooter>button:hover {
     color: var(--gray-100)
 }
 
-.commentFooter > button:active {
+.commentFooter>button:active {
     color: var(--green-300);
     outline: none;
+}
+
+@media (max-width: 768px) {
+    .commentWrapper {
+        grid-template-columns: 1fr;
+    }
 }
