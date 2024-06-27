@@ -3,31 +3,29 @@ import { ThumbsUp, Trash } from '@phosphor-icons/react';
 
 export function Comment() {
     return (
-        <div className={styles.commentWrapper}>
+        <div className={styles.comment}>
             <img src="https://github.com/vbuarque.png" alt="" />
 
-            <div className={styles.commentSection}>
-                <div className={styles.comment}>
+            <div className={styles.commentBox}>
+                <div className={styles.commentContent}>
                     <header>
-                        <div className={styles.commentUser}>
-                            <div className={styles.userName}>
-                                <strong>Vinicius Buarque</strong>
-                                <span>(você)</span>
-                            </div>
-                            <time title='31 de Maio as 08:13h' dateTime="2024-05-31 08:13:30">Cerca de 2h</time>
+                        <div className={styles.authorAndTime}>
+                            <strong>Vinicius Buarque</strong>
+                            <time title='31 de Maio as 08:13h' dateTime="2024-05-31 08:13:30">Cerca de 2h atrás</time>
                         </div>
 
-                        <button>
-                            <Trash size={24}/>
+                        <button title='Deletar comentário'>
+                            <Trash size={24} />
                         </button>
                     </header>
 
                     <p>Muito bom Devon, parabéns!! 👏👏</p>
                 </div>
+
                 <footer className={styles.commentFooter}>
                     <button>
                         <ThumbsUp size={20} />
-                        <strong>Aplaudir • 03</strong>
+                        <strong>Aplaudir<span>20</span></strong>
                     </button>
                 </footer>
             </div>

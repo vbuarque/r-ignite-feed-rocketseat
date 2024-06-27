@@ -1,92 +1,82 @@
-.commentWrapper {
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: 50px 1fr;
+.comment {
+    margin-top: 1.5rem;
+    display: flex;
     gap: 1rem;
 }
 
-.commentWrapper+.commentWrapper {
+.comment+.comment {
     margin-top: 1.5rem;
 }
 
-.commentWrapper img {
-    box-sizing: initial;
+.comment img {
     width: 3rem;
     height: 3rem;
     border-radius: 8px;
 }
 
-.commentSection {
-    display: grid;
-    gap: 1rem;
+.commentBox {
+    flex: 1;
 }
 
-.comment {
+.commentContent {
     background: var(--gray-700);
     padding: 1rem 1rem 1.5rem 1rem;
     border-radius: 8px;
-
-    display: grid;
-    gap: 1rem;
 }
 
-.comment>header {
+.commentContent header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 }
 
-.userName {
-    display: flex;
-    flex-direction: row;
-    gap: 0.313rem;
-}
-
-.userName>strong {
+.authorAndTime strong {
+    display: block;
     font-size: 0.875rem;
     color: var(--gray-100);
     line-height: 1.6;
-    font-weight: bold;
 }
 
-.userName>span {
-    font-size: 0.875rem;
-    color: var(--gray-400);
-    line-height: 1.6;
-    font-weight: bold;
-}
-
-.commentUser>time {
+.authorAndTime time {
+    display: block;
     font-size: 0.75rem;
     color: var(--gray-400);
     line-height: 1.6;
 }
 
-.comment>header>button {
+.commentContent header button {
     background: transparent;
-    border: none;
+    border: 0;
     color: var(--gray-400);
     cursor: pointer;
     transition: color 0.2s;
+
+    line-height: 0;
+    border-radius: 2px;
 }
 
-.comment>header>button:hover {
-    color: var(--red-300);
+.commentContent header button:hover {
+    color: var(--red-500);
 }
 
-.comment>p {
+.commentContent p {
+    margin-top: 1rem;
     font-size: 0.875rem;
     color: var(--gray-300);
     line-height: 1.6;
 }
 
-.commentFooter>button {
+.commentFooter {
+    margin-top: 1rem;
+}
+
+.commentFooter button {
     background: transparent;
-    border: none;
+    border: 0;
+    border-radius: 2px;
 
     display: flex;
-    align-items: flex-end;
-    gap: 0.625rem;
+    align-items: center;
 
     font-size: 0.875rem;
     color: var(--gray-400);
@@ -104,8 +94,17 @@
     outline: none;
 }
 
+.commentFooter button svg {
+    margin-right: 0.5rem;
+}
+
+.commentBox footer button span::before {
+    content: "\2022";
+    padding: 0 0.25rem;
+}
+
 @media (max-width: 768px) {
-    .commentWrapper {
+    .comment {
         grid-template-columns: 1fr;
     }
 }
