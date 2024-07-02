@@ -1,30 +1,46 @@
+import { format, formatDistanceToNow } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
+
 import { Comment, Avatar } from './index';
 import styles from './Post.module.css';
 
-export function Post() {
+export function Post({ author, publishedAt, content, hashtags }) {
+    const publishedDateFormat = format(new Date(publishedAt), "dd 'de' MMMM, 'às' HH:mm'h'", {
+        locale: ptBR
+    });
+
+    const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+        locale: ptBR,
+        addSuffix: true
+    })
+
     return (
         <article className={styles.post}>
             <header className={styles.authorHeader}>
                 <div className={styles.author}>
-                    <Avatar src="https://github.com/vbuarque.png" alt="" />
+                    <Avatar src={author.avatarUrl} alt="" />
 
                     <div className={styles.authorInfo}>
-                        <strong>Vinicius Buarque</strong>
-                        <span>Web Developer</span>
+                        <strong>{author.name}</strong>
+                        <span>{author.role}</span>
                     </div>
                 </div>
 
-                <time title='31 de Maio as 08:13h' dateTime="2024-05-31 08:13:30">Publicado há 1h</time>
+                <time title={publishedDateFormat} dateTime={publishedAt.toISOString()}>{publishedDateRelativeToNow}</time>
             </header>
 
             <div className={styles.content}>
-                <p>Fala galeraa 👋</p>
-                <p>Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀</p>
-                <p>👉{' '}<a href="">jane.design/doctorcare</a></p>
+                {content.map(line => {
+                    if (line.type === 'paragraph') {
+                        return <p>{line.content}</p>;
+                    } else if (line.type === 'link') {
+                        return <p><a href='#'>{line.content}</a></p>
+                    }
+                })}
                 <p className={styles.hashtags}>
-                    <a href="">#novoprojeto</a>
-                    <a href="">#nlw</a>
-                    <a href="">#rocketseat</a>
+                {hashtags.map(hashtag => (
+                        <a href='#'>{hashtag}</a>
+                    ))}
                 </p>
             </div>
 
